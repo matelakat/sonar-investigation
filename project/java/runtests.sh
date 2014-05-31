@@ -4,7 +4,7 @@ mkdir -p lib
 
 (
     cd lib
-    wget -nc http://bit.ly/My9IXz
-    wget -nc http://bit.ly/1gbl25b
+    wget -O junit.jar -nc http://bit.ly/My9IXz
+    wget -O hamcrest-core.jar -nc http://bit.ly/1gbl25b
 )
 
