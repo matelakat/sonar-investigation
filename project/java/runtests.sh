@@ -1,11 +1,12 @@
 #!/bin/bash
 
 mkdir -p lib
+LIB=$(readlink -f lib)
 
 (
     cd lib
-    wget -O junit.jar -nc http://bit.ly/My9IXz
-    wget -O hamcrest-core.jar -nc http://bit.ly/1gbl25b
+    wget -nc http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.jar
+    wget -nc http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
 )
 
 
@@ -21,7 +22,7 @@ OBJ=$(readlink -f obj)
 
 (
     cd test
-    javac -d "$OBJ" $(find -name "*.java")
+    javac -cp "$LIB/*" -d "$OBJ" $(find -name "*.java")
 )
 
 
