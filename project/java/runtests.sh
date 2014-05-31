@@ -34,6 +34,12 @@ OBJ=$(readlink -f obj)
     javac -cp "$OBJ:$LIB/*" -d "$OBJ" $(find -name "*.java")
 )
 
+# Instrument the code with cobertura
 
-java -cp "$OBJ:$LIB/*" \
+java \
+    -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
+    net.sourceforge.cobertura.instrument.Main obj
+
+
+java -cp "$OBJ:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
     org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
