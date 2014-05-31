@@ -56,3 +56,4 @@ cd
 sudo apt-get -qy install git
 git clone https://github.com/matelakat/sonar-investigation
 sonar-investigation/project/java
+sonar-runner
