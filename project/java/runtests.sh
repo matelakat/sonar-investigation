@@ -26,3 +26,5 @@ OBJ=$(readlink -f obj)
 )
 
 
+java -cp "$OBJ:$LIB/*" \
+    org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
