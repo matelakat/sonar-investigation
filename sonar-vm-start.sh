@@ -19,12 +19,12 @@ mkdir -p "$WORKDIR/sonar-vm"
         -drive file="$WORKDIR/sonar-vm/hda.qcow2",if=virtio
 )
 
-qemu-system-x86_64 \
+nohup qemu-system-x86_64 \
     -enable-kvm \
     -m 2048 \
     -vnc :1 \
     -boot c \
-    -net user,hostfwd=tcp::4545-:22 \
+    -net user,hostfwd=tcp::4545-:22,hostfwd=tcp::9000-:9000 \
     -net nic,model=virtio \
     -drive file="$WORKDIR/sonar-vm/hda.qcow2",if=virtio &
 
