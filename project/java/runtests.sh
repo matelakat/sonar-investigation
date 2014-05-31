@@ -10,6 +10,15 @@ LIB=$(readlink -f lib)
 )
 
 
+[ -d cobertura ] ||
+(
+    mkdir -p cobertura
+    cd cobertura
+    wget -nc http://downloads.sourceforge.net/project/cobertura/cobertura/2.0.3/cobertura-2.0.3-bin.tar.gz
+    tar -xzf cobertura-2.0.3-bin.tar.gz 
+)
+
+
 rm -rf obj
 mkdir -p obj
 
