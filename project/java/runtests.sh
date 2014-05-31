@@ -8,3 +8,20 @@ mkdir -p lib
     wget -O hamcrest-core.jar -nc http://bit.ly/1gbl25b
 )
 
+
+rm -rf obj
+mkdir -p obj
+
+OBJ=$(readlink -f obj)
+
+(
+    cd src
+    javac -d "$OBJ" $(find -name "*.java")
+)
+
+(
+    cd src
+    javac -d "$OBJ" $(find -name "*.java")
+)
+
+
