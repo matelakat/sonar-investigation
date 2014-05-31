@@ -53,4 +53,6 @@ export PATH=$PATH:$SONAR_RUNNER_HOME/bin:$(readlink -f ../sonar/jdk1.7.0_60/bin/
 
 cd
 
-
+sudo apt-get -qy install git
+git clone https://github.com/matelakat/sonar-investigation
+sonar-investigation/project/java
