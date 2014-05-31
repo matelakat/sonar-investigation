@@ -46,5 +46,5 @@ java -cp "$OBJ:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
 # Generate cobertura report
 java \
     -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
-    net.sourceforge.cobertura.reporting.Main
+    net.sourceforge.cobertura.reporting.Main --destination ./ --format xml
 
