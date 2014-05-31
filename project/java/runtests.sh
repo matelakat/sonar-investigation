@@ -15,7 +15,7 @@ LIB=$(readlink -f lib)
     mkdir -p cobertura
     cd cobertura
     wget -nc http://downloads.sourceforge.net/project/cobertura/cobertura/2.0.3/cobertura-2.0.3-bin.tar.gz
-    tar -xzf cobertura-2.0.3-bin.tar.gz 
+    tar -xzf cobertura-2.0.3-bin.tar.gz
 )
 
 
@@ -35,7 +35,6 @@ OBJ=$(readlink -f obj)
 )
 
 # Instrument the code with cobertura
-
 java \
     -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
     net.sourceforge.cobertura.instrument.Main obj
@@ -43,3 +42,9 @@ java \
 
 java -cp "$OBJ:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
     org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
+
+# Generate cobertura report
+java \
+    -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
+    net.sourceforge.cobertura.reporting.Main
+
