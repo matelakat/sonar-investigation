@@ -22,7 +22,7 @@ OBJ=$(readlink -f obj)
 
 (
     cd test
-    javac -cp "$LIB/*" -d "$OBJ" $(find -name "*.java")
+    javac -cp "$OBJ:$LIB/*" -d "$OBJ" $(find -name "*.java")
 )
 
 
