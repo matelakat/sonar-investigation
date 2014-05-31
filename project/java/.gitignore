@@ -2,3 +2,4 @@ lib
 obj
 cobertura
 cobertura.ser
+coverage.xml
