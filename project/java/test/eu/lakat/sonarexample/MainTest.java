@@ -13,4 +13,13 @@ public class MainTest {
     public void someStupidTest() {
         assertEquals(1, 1);
     }
+
+    @Test
+    public void testSum() {
+        Main main = new Main();
+
+        int result = main.sum(1, 2);
+
+        assertEquals(3, result);
+    }
 }
