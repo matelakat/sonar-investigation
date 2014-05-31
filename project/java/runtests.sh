@@ -20,7 +20,7 @@ OBJ=$(readlink -f obj)
 )
 
 (
-    cd src
+    cd test
     javac -d "$OBJ" $(find -name "*.java")
 )
 
