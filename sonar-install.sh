@@ -59,3 +59,5 @@ sonar-investigation/project/java
 sonar-runner
 
 # Install cobertura plugin to your sonar
+
+# Cross - file dupes are only detected after the second run
