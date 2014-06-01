@@ -95,3 +95,6 @@ compile debug
 java -cp "$OBJ:$JACOCO_AGENT" \
     -javaagent:$JACOCO_AGENT \
     eu.lakat.sonarexample.IntegrationTest
+
+# Publish stuff with sonar
+sonar-runner
