@@ -91,4 +91,4 @@ compile debug
 # Run integration tests
 java -cp "$OBJ:$JACOCO_AGENT" \
     -javaagent:$JACOCO_AGENT \
-    eu.lakat.sonarexample.Main
+    eu.lakat.sonarexample.IntegrationTest
