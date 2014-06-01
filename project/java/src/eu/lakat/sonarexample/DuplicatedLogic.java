@@ -16,6 +16,9 @@ public class DuplicatedLogic {
             if('d' == otherParamRenamed.charAt(1)) {
                 return true;
             }
+            if('e' == otherParamRenamed.charAt(1)) {
+                return true;
+            }
         }
         return false;
     }
