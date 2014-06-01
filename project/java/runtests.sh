@@ -57,6 +57,6 @@ java \
 
 # Run integration tests
 java -cp "$OBJ:jacoco/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
-    eu.lakat.sonarexample.MainTest
+    eu.lakat.sonarexample.Main
 
 
