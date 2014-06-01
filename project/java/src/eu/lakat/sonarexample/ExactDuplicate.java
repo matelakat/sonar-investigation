@@ -12,6 +12,9 @@ public class ExactDuplicate {
             if('c' == param.charAt(1)) {
                 return true;
             }
+            if('d' == param.charAt(1)) {
+                return true;
+            }
         }
         return false;
     }
@@ -22,6 +25,9 @@ public class ExactDuplicate {
                 return true;
             }
             if('c' == param.charAt(1)) {
+                return true;
+            }
+            if('d' == param.charAt(1)) {
                 return true;
             }
         }
