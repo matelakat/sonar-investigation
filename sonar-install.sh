@@ -55,9 +55,8 @@ cd
 
 sudo apt-get -qy install git
 git clone https://github.com/matelakat/sonar-investigation
-sonar-investigation/project/java
-sonar-runner
+cd sonar-investigation/project/java
+./runtests.sh
 
 # Install cobertura plugin to your sonar
-
 # Cross - file dupes are only detected after the second run
