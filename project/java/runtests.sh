@@ -70,7 +70,7 @@ rm -rf instrumented
 mkdir -p instrumented
 java \
     -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
-    net.sourceforge.cobertura.instrument.Main obj --destination=instrumented
+    net.sourceforge.cobertura.instrument.Main --destination instrumented obj
 
 
 # Execute the Unit tests
