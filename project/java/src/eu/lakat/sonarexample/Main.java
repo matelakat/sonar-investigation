@@ -3,7 +3,8 @@ package eu.lakat.sonarexample;
 
 class Main {
     public static void main(String[] args) {
-        System.out.println("Hello Sonar");
+        Utility utility = new Utility();
+        utility.sayHello();
     }
 
     public int sum(int num1, int num2) {
