@@ -12,15 +12,5 @@ public class Utility {
         return num1 + num2;
     }
 
-    public boolean ratherComplicatedImplementation(String param) {
-        if('a' == param.charAt(0)) {
-            if('b' == param.charAt(1)) {
-                return true;
-            }
-            if('c' == param.charAt(1)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
