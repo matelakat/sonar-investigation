@@ -78,7 +78,7 @@ java \
 
 # Execute the Unit tests
 java -cp "instrumented:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
-    org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
+    org.junit.runner.JUnitCore eu.lakat.sonarexample.UtilityTest
 
 # Generate cobertura report
 java \

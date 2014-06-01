@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(JUnit4.class)
-public class MainTest {
+public class UtilityTest {
     @Test
     public void someStupidTest() {
         assertEquals(1, 1);
@@ -16,9 +16,9 @@ public class MainTest {
 
     @Test
     public void testSum() {
-        Main main = new Main();
+        Utility utility = new Utility();
 
-        int result = main.sum(1, 2);
+        int result = utility.sum(1, 2);
 
         assertEquals(3, result);
     }
