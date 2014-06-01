@@ -25,6 +25,8 @@ LIB=$(readlink -f lib)
     wget -nc http://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.jar
 )
 
+JACOCO_AGENT=$(find jacoco -name "*.jar")
+
 
 rm -rf obj
 mkdir -p obj
@@ -56,7 +58,8 @@ java \
     net.sourceforge.cobertura.reporting.Main --destination ./ --format xml
 
 # Run integration tests
-java -cp "$OBJ:jacoco/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
+java -cp "$OBJ:$JACOCO_AGENT:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
+    -javaagent:$JACOCO_AGENT \
     eu.lakat.sonarexample.Main
 
 
