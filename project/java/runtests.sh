@@ -26,6 +26,7 @@ LIB=$(readlink -f lib)
 )
 
 JACOCO_AGENT=$(find jacoco -name "*.jar")
+JACOCO_AGENT=$(readlink -f $JACOCO_AGENT)
 
 
 function compile() {
