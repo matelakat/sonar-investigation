@@ -28,6 +28,7 @@ LIB=$(readlink -f lib)
 JACOCO_AGENT=$(find jacoco -name "*.jar")
 
 
+function compile() {
 rm -rf obj
 mkdir -p obj
 
@@ -42,6 +43,10 @@ OBJ=$(readlink -f obj)
     cd test
     javac -cp "$OBJ:$LIB/*" -d "$OBJ" $(find -name "*.java")
 )
+}
+
+# Compile sources
+compile
 
 # Instrument the code with cobertura
 java \
@@ -49,6 +54,7 @@ java \
     net.sourceforge.cobertura.instrument.Main obj
 
 
+# Execute the Unit tests
 java -cp "$OBJ:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
     org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
 
@@ -57,9 +63,10 @@ java \
     -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
     net.sourceforge.cobertura.reporting.Main --destination ./ --format xml
 
+# Compile sources again (to throw away the instrumented bits)
+compile
+
 # Run integration tests
-java -cp "$OBJ:$JACOCO_AGENT:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
+java -cp "$OBJ:$JACOCO_AGENT" \
     -javaagent:$JACOCO_AGENT \
     eu.lakat.sonarexample.Main
-
-
