@@ -30,6 +30,12 @@ JACOCO_AGENT=$(readlink -f $JACOCO_AGENT)
 
 
 function compile() {
+
+EXTRA_OPTS=""
+if [ "${1:-}" == "debug" ]; then
+    EXTRA_OPTS="-g"
+fi
+
 rm -rf obj
 mkdir -p obj
 
@@ -37,12 +43,12 @@ OBJ=$(readlink -f obj)
 
 (
     cd src
-    javac -d "$OBJ" $(find -name "*.java")
+    javac $EXTRA_OPTS -d "$OBJ" $(find -name "*.java")
 )
 
 (
     cd test
-    javac -cp "$OBJ:$LIB/*" -d "$OBJ" $(find -name "*.java")
+    javac $EXTRA_OPTS -cp "$OBJ:$LIB/*" -d "$OBJ" $(find -name "*.java")
 )
 }
 
@@ -65,7 +71,7 @@ java \
     net.sourceforge.cobertura.reporting.Main --destination ./ --format xml
 
 # Compile sources again (to throw away the instrumented bits)
-compile
+compile debug
 
 # Run integration tests
 java -cp "$OBJ:$JACOCO_AGENT" \
