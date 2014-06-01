@@ -26,6 +26,8 @@ sed -ie '/jdbc:h2/d' sonarqube-4.3/conf/sonar.properties
 sed -ie 's/#\(.*jdbc:mysql\)/\1/g' sonarqube-4.3/conf/sonar.properties
 sed -ie 's/#wrapper.java.additional.7=-server/wrapper.java.additional.7=-server/g' sonarqube-4.3/conf/wrapper.conf
 echo "wrapper.java.additional.7=-Djava.net.preferIPv4Stack=true" >> sonarqube-4.3/conf/wrapper.conf
+# http://wiki.apache.org/tomcat/HowTo/FasterStartUp
+echo "wrapper.java.additional.8=-Djava.security.egd=file:/dev/./urandom" >> sonarqube-4.3/conf/wrapper.conf
 
 cp sonarqube-4.3/conf/wrapper.conf sonarqube-4.3/conf/wrapper.conf.orig
 sed -ie "s,wrapper.java.command=java,wrapper.java.command=$(readlink -f jdk1.7.0_60/bin/java),g" sonarqube-4.3/conf/wrapper.conf
@@ -54,4 +56,5 @@ cd sonar-investigation/project/java
 ./runtests.sh
 
 # Install cobertura plugin to your sonar
+# Install build breaker to sonar
 # Cross - file dupes are only detected after the second run

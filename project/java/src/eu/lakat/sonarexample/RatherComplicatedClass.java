@@ -12,6 +12,12 @@ public class RatherComplicatedClass {
             if('c' == param.charAt(1)) {
                 return true;
             }
+            if('d' == param.charAt(1)) {
+                return true;
+            }
+            if('e' == param.charAt(1)) {
+                return true;
+            }
         }
         return false;
     }
