@@ -18,6 +18,13 @@ LIB=$(readlink -f lib)
     tar -xzf cobertura-2.0.3-bin.tar.gz
 )
 
+[ -d jacoco ] ||
+(
+    mkdir -p jacoco
+    cd jacoco
+    wget -nc http://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.jar
+)
+
 
 rm -rf obj
 mkdir -p obj
