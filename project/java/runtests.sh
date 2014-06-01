@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export SONAR_RUNNER_HOME=$(readlink -f ../../../sonar-runner/sonar-runner-2.4/)
+export PATH=$PATH:$SONAR_RUNNER_HOME/bin:$(readlink -f ../../../sonar/jdk1.7.0_60/bin/)
+
 mkdir -p lib
 LIB=$(readlink -f lib)
 
