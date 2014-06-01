@@ -25,7 +25,17 @@ LIB=$(readlink -f lib)
     wget -nc http://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.jar
 )
 
-JACOCO_AGENT=$(find jacoco -name "*.jar")
+JACOCO_JAR=$(find jacoco -name "*.jar")
+JACOCO_JAR=$(readlink -f $JACOCO_JAR)
+
+[ -d jacoco_extracted ] ||
+(
+    mkdir -p jacoco_extracted
+    cd jacoco_extracted
+    unzip $JACOCO_JAR
+)
+
+JACOCO_AGENT=$(find jacoco_extracted -name "jacocoagent.jar")
 JACOCO_AGENT=$(readlink -f $JACOCO_AGENT)
 
 
