@@ -56,13 +56,15 @@ OBJ=$(readlink -f obj)
 compile
 
 # Instrument the code with cobertura
+rm -rf instrumented
+mkdir -p instrumented
 java \
     -cp "cobertura/cobertura-2.0.3/cobertura-2.0.3.jar:cobertura/cobertura-2.0.3/lib/*" \
-    net.sourceforge.cobertura.instrument.Main obj
+    net.sourceforge.cobertura.instrument.Main obj --destination=instrumented
 
 
 # Execute the Unit tests
-java -cp "$OBJ:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
+java -cp "instrumented:$LIB/*:cobertura/cobertura-2.0.3/cobertura-2.0.3.jar" \
     org.junit.runner.JUnitCore eu.lakat.sonarexample.MainTest
 
 # Generate cobertura report
