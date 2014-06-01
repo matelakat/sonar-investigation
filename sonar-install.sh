@@ -48,11 +48,6 @@ sonar.password=admin
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8
 EOF
 
-export SONAR_RUNNER_HOME=$(readlink -f sonar-runner-2.4/)
-export PATH=$PATH:$SONAR_RUNNER_HOME/bin:$(readlink -f ../sonar/jdk1.7.0_60/bin/)
-
-cd
-
 sudo apt-get -qy install git
 git clone https://github.com/matelakat/sonar-investigation
 cd sonar-investigation/project/java
