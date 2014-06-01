@@ -39,6 +39,9 @@ JACOCO_AGENT=$(find jacoco_extracted -name "jacocoagent.jar")
 JACOCO_AGENT=$(readlink -f $JACOCO_AGENT)
 
 
+# Perform some cleanup
+rm -f cobertura.ser coverage.xml jacoco.exec
+
 function compile() {
 
 EXTRA_OPTS=""
