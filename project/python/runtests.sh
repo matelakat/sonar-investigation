@@ -31,4 +31,4 @@ set -e
 coverage xml -i
 
 # Publish stuff with sonar
-sonar-runner
+sonar-runner -X
