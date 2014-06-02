@@ -22,7 +22,7 @@ set +u
 set -u
 
 coverage erase
-coverage run --branch --sources=src $(which nosetests) --with-xunit src
+coverage run --branch --source=src $(which nosetests) --with-xunit src
 coverage xml -i
 
 # Publish stuff with sonar
