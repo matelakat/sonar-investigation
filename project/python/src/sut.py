@@ -4,3 +4,7 @@ class ProductionServer(object):
             return True
 
         return False
+
+    def some_stupid_method(self):
+        if variable is True:
+            return False
