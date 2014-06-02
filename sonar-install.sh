@@ -58,3 +58,23 @@ cd sonar-investigation/project/java
 # Install cobertura plugin to your sonar
 # Install build breaker to sonar
 # Cross - file dupes are only detected after the second run
+
+cd
+
+cat > start-sonar.sh << EOF
+#!/bin/bash
+sonar/sonarqube-4.3/bin/linux-x86-64/sonar.sh start
+EOF
+
+chmod +x start-sonar.sh
+
+cat > stop-sonar.sh << EOF
+#!/bin/bash
+sonar/sonarqube-4.3/bin/linux-x86-64/sonar.sh stop
+EOF
+
+chmod +x stop-sonar.sh
+
+# Install python plugin
+
+sudo apt-get install python-virtualenv
