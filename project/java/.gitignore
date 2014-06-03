@@ -3,3 +3,8 @@ obj
 cobertura
 cobertura.ser
 coverage.xml
+instrumented
+jacoco.exec
+jacoco
+jacoco_extracted
+
