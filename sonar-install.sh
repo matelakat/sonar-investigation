@@ -78,3 +78,6 @@ chmod +x stop-sonar.sh
 # Install python plugin
 
 sudo apt-get install python-virtualenv
+
+# Activate pylint metrics
+# Activate buidBreaker in preview mode
