@@ -20,3 +20,8 @@ class ProductionServer(object):
             self.state = "WORKING"
         elif "WORKING" == self.state:
             self.state = "DONE"
+
+    def dodgy_stuff_method(self):
+        if blah is True:
+            return False
+
