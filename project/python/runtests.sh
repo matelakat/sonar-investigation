@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eux
 
+git pull
+
 rm -f .coverage coverage.xml nosetests.xml
 
 export SONAR_RUNNER_HOME=$(readlink -f ../../../sonar-runner/sonar-runner-2.4/)
