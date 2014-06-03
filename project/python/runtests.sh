@@ -12,7 +12,8 @@ export PATH=$PATH:$SONAR_RUNNER_HOME/bin:$(readlink -f ../../../sonar/jdk1.7.0_6
     . .env/bin/activate
     set -u
 
-    pip install pylint pep8 nose coverage
+    pip install pep8 nose coverage
+    pip install pylint==0.25
 
     set +u
     deactivate
