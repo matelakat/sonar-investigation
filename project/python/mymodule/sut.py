@@ -20,3 +20,14 @@ class ProductionServer(object):
             self.state = "WORKING"
         elif "WORKING" == self.state:
             self.state = "DONE"
+
+
+    def complicated_function(self):
+        print "ww"
+        print "ww"
+        print "ww"
+        print "ww"
+        print "ww"
+        print "ww"
+        print "ww"
+        print "ww"
