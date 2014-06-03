@@ -20,3 +20,7 @@ class ProductionServer(object):
             self.state = "WORKING"
         elif "WORKING" == self.state:
             self.state = "DONE"
+
+    def uncovered_stuff(self):
+        print "jj"
+        print "I am not covered"
