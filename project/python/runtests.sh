@@ -32,7 +32,7 @@ coverage xml -i
 
 # Hacks
 THISDIR=$(pwd)
-sed -ie "s,filename=\",filename=\"$THISDIR\,g" coverage.xml
-sed -ie "s,classname=\",classname=\"$THISDIR\,g" nosetests.xml
+sed -ie "s,filename=\",filename=\"$THISDIR/,g" coverage.xml
+sed -ie "s,classname=\",classname=\"$THISDIR/,g" nosetests.xml
 # Publish stuff with sonar
 sonar-runner -X
