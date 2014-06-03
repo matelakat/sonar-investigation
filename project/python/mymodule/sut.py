@@ -8,12 +8,13 @@ class ProductionServer(object):
 
         return False
 
+    def uppercase(self, text):
+        return text.upper()
+
     def some_stupid_method(self):
         if variable is True:
             return False
 
-    def uppercase(self, text):
-        return text.upper()
 
     def complicated_function(self):
         if "START" == self.state:
