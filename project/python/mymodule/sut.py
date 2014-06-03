@@ -23,4 +23,10 @@ class ProductionServer(object):
 
     def uncovered_stuff(self):
         print "jj"
+        print "jj"
+        print "jj"
+        print "jj"
+        print "jj"
+        print "jj"
+        print "jj"
         print "I am not covered"
