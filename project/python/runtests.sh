@@ -25,7 +25,7 @@ set -u
 
 coverage erase
 set +e
-coverage run --branch --source=src $(which nosetests) --with-xunit
+coverage run --branch --source=mymodule $(which nosetests) --with-xunit
 TESTRESULT=$?
 set -e
 coverage xml -i
