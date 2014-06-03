@@ -29,4 +29,8 @@ class ProductionServer(object):
         if blah is True:
             return False
 
+    def more_dodgyness_stuff_method(self):
+        if blah is True:
+            return False
+
 
