@@ -12,9 +12,8 @@ class ProductionServer(object):
         return text.upper()
 
     def some_stupid_method(self):
-        if variable is True:
+        if blah is True:
             return False
-
 
     def complicated_function(self):
         if "START" == self.state:
