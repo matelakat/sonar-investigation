@@ -11,7 +11,7 @@ class ProductionServer(object):
     def uppercase(self, text):
         return text.upper()
 
-    def some_stupid_method(self):
+    def some_extremely_harmful_method(self):
         if blah is True:
             return False
 
